@@ -1,0 +1,3 @@
+[submodule "trial/video/moyai"]
+	path = trial/video/moyai
+	url = git@github.com:kengonakajima/moyai
