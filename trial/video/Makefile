@@ -5,4 +5,7 @@ LIBS = moyai/libmoyai.a moyai/libfmodex.dylib moyai/libsoil.a -framework OpenGL 
 all: gen
 
 gen: gen.cpp
-	g++ -I./moyai gen.cpp $(LIBS) -o gen 
+	g++ -g -O3 -I./moyai gen.cpp $(LIBS) -o gen 
+
+clean:
+	rm gen
