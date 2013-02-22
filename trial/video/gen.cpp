@@ -91,8 +91,7 @@ public:
         char *compout = (char*)malloc( 64 * 1024 );
         int osz = LZ4_compress( (const char*)outbuf, compout, out_ind );
         print("final size:%d", osz );
-
-        
+        free(compout);
         free(outbuf);
     }
 };
