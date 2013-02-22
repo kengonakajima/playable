@@ -30,6 +30,7 @@ public:
         return -1; // 満杯
     }
     void writePIF( const char *path ) {
+
         unsigned char *outbuf = (unsigned char *) malloc( height * width * 2);
         
         // Imageのbufferは h*w*4, rgba
@@ -93,6 +94,7 @@ public:
         print("final size:%d", osz );
         free(compout);
         free(outbuf);
+
     }
 };
 
@@ -106,7 +108,7 @@ void display(void) {
     g_moyai->renderAll();
 }
 
-#define NPROP 60
+#define NPROP 200
 
 Prop *g_props[NPROP];
 
@@ -191,7 +193,11 @@ int main( int argc, char **argv ) {
         p->setDeck(dk);
         p->setScl(16,16);
         p->setLoc(range(-100,100),range(-100,100) );
-        p->setIndex(0);
+        if( birandom() ) {
+            p->setIndex(0);
+        } else {
+            p->setIndex(48);            
+        }
 
         l->insertProp(p);
 
