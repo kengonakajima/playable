@@ -2,3 +2,4 @@ gen
 _capt_*.png
 gen.dSYM
 .DS_Store
+*.o

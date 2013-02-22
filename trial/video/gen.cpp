@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 #include "moyai/moyai.h"
-
+#include "lz4/lz4.h"
 
 
 class PlayableImage : public Image {
@@ -86,6 +86,13 @@ public:
         }
         assert( totlen == height * width );
 
+
+        // それを圧縮
+        char *compout = (char*)malloc( 64 * 1024 );
+        int osz = LZ4_compress( (const char*)outbuf, compout, out_ind );
+        print("final size:%d", osz );
+
+        
         free(outbuf);
     }
 };
@@ -140,7 +147,8 @@ void idle(void) {
     snprintf(fn,sizeof(fn), "_capt_%03d.pif", cnt );
     img->writePIF(fn);
     delete img;
-    
+
+    sleep(1);
 }
 
 
