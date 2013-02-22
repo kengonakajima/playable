@@ -42,6 +42,18 @@ void idle(void) {
 
     g_moyai->pollAll(dt);
     g_moyai->renderAll();
+
+    // capture..
+    Image *img = new Image();
+    img->setSize(320,240);
+    g_moyai->capture( img );
+
+    char fn[100];
+    snprintf(fn,sizeof(fn), "_capt_%03d.png", cnt );
+    img->writePNG(fn);
+    delete img;
+
+    
     last_poll_at = t;
 }
 
