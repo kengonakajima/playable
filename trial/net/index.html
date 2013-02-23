@@ -4,34 +4,9 @@
   <meta charset="UTF-8">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="http://127.0.0.1:1337/socket.io/socket.io.js"></script>
-  <script src="game.js"></script>
   <script src="jumino/jumino.js"></script>    
-  <script type="text/javascript">
-  $(function(){
-    var socket = io.connect('http://127.0.0.1:1337/');
-    socket.on('connect', function() {
-      $("#log").html($("#log").html() + "<br />" + 'connected');
-      socket.on('info', function (data) {
-        $("#log").html($("#log").html() + "<br />" + data.msg);
-      });
-      socket.on('msg', function(data){
-  var d = new Date();
-  console.log( d, d.getMilliseconds() );  
-        $("#log").html($("#log").html() + "<br />" + "<b>" + data.msg + "</b>");
-      });
-      $("#send").click(function(){
-        var msg = $("#msg").val();
-        if(!msg){
-          alert("input your message");
-          return;
-        }
-  var d = new Date();
-  console.log( d, d.getMilliseconds() );
-        socket.emit('msg', msg);
-      });
-    });
-  });
-  </script>
+  <script src="game.js"></script>
+
   <title>nodetest</title>
 </head>
 <body>
