@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="http://127.0.0.1:1337/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+  <script src="jumino/jumino.js"></script>    
   <script type="text/javascript">
   $(function(){
     var socket = io.connect('http://127.0.0.1:1337/');
@@ -36,4 +38,7 @@
   <input id="msg" type="text" style="width:400px;"></input>
   <input id="send" type="button" value="send" /></br >
   <div id="log" style="width:400px;height:400px;overflow:auto;border:1px solid #000000;"></div>
+
+  <canvas id="gamemain" width=640 height=480 style="background-color: #000;"> </canvas>
+    
 </html>

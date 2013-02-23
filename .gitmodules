@@ -1,3 +1,6 @@
 [submodule "trial/video/moyai"]
 	path = trial/video/moyai
 	url = git@github.com:kengonakajima/moyai
+[submodule "trial/net/jumino"]
+	path = trial/net/jumino
+	url = git@github.com:kengonakajima/jumino.git
